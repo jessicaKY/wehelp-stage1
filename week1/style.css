@@ -1,0 +1,46 @@
+.frame {
+  display: flex; /*讓下一層次項目水平排列*/
+}
+.left {
+  /* background-color: red; */
+
+  flex: none; /*固定配置 參考寬度*/
+  width: 200px;
+}
+.right {
+  display: flex; /*讓下一層次項目水平排列*/
+  justify-content: flex-end; /*水平對齊*/
+
+  /* background-color: blue; */
+
+  flex: auto; /* 很自動不用設定寬度 */
+}
+.item {
+  /* background-color: #cccccc; */
+
+  flex: none; /* 固定配置 參考寬度 */
+  width: 100px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.welcome {
+  display: flex;
+  font-size: 2em;
+  font-weight: bold;
+  justify-content: center; /* 水平對齊 */
+  align-items: center; /* 垂直對齊 */
+  height: 250px;
+  background-color: #cccccc;
+}
+.text {
+  width: auto;
+  white-space: normal;
+
+  /* height: 40px; */
+  /* font-size: 30px; */
+
+  font-size: clamp(20px, 4vw, 30px);
+  font-weight: bold;
+  text-align: center;
+}
