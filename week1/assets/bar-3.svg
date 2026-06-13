@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Night forest">
+  <rect width="320" height="200" fill="#233d4d"/>
+  <circle cx="260" cy="48" r="24" fill="#fcca46"/>
+  <path d="M30 164 64 86l34 78zM88 168l42-100 43 100zM176 166l34-78 35 78z" fill="#619b8a"/>
+  <path d="M0 162c64 18 118 18 162 0 50-20 102-18 158 6v32H0z" fill="#0f2a30"/>
+</svg>

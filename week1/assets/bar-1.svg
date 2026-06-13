@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Lake landscape">
+  <rect width="320" height="200" fill="#8ecae6"/>
+  <circle cx="252" cy="44" r="28" fill="#ffd166"/>
+  <path d="M0 128 78 58l62 70 52-45 128 96v21H0z" fill="#457b9d"/>
+  <path d="M0 154c48-20 92-18 134 0s84 19 128 0c24-10 43-12 58-8v54H0z" fill="#2a9d8f"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Warm hills">
+  <rect width="320" height="200" fill="#f4a261"/>
+  <circle cx="72" cy="58" r="34" fill="#ffe8a3"/>
+  <path d="M0 126 88 72l72 54 46-35 114 81v28H0z" fill="#e76f51"/>
+  <path d="M0 156c54-18 104-15 150 9 53 28 110 18 170-14v49H0z" fill="#264653"/>
+</svg>
