@@ -138,7 +138,7 @@ a {
 }
 
 .bars {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 2fr repeat(4, 1fr);
   margin-bottom: 20px;
 }
 
@@ -156,6 +156,10 @@ a {
 }
 
 .bar-wide {
+  grid-column: span 3;
+}
+
+.bars .bar:nth-child(3) {
   grid-column: span 2;
 }
 
