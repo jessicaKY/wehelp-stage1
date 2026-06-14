@@ -235,7 +235,7 @@ a {
     grid-column: auto;
   }
 
-  .bar:nth-child(3) {
+  .bars .bar:nth-child(3) {
     grid-column: 1 / -1;
   }
 
@@ -270,7 +270,9 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .bar:nth-child(3),
+  .bar-large,
+  .bar-wide,
+  .bars .bar:nth-child(3),
   .card:nth-last-child(-n + 2) {
     grid-column: auto;
   }
