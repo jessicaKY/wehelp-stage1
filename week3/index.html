@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeHelp Week 3 Assignment</title>
+    <link rel="stylesheet" href="style.css?v=6" />
+  </head>
+  <body>
+    <header class="navbar">
+      <h1 class="site-title">My Website</h1>
+      <nav class="desktop-menu" aria-label="Main navigation">
+        <a href="#">Item 1</a>
+        <a href="#">Item 2</a>
+        <a href="#">Item 3</a>
+        <a href="#">Item 4</a>
+      </nav>
+      <button class="burger-button" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <aside class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <button class="close-button" type="button" aria-label="Close menu">x</button>
+      <a href="#">Item 1</a>
+      <a href="#">Item 2</a>
+      <a href="#">Item 3</a>
+      <a href="#">Item 4</a>
+    </aside>
+    <div class="menu-backdrop" hidden></div>
+
+    <section class="welcome">
+      <p>Welcome to MyHome</p>
+    </section>
+
+    <main class="content">
+      <section class="bars" aria-label="Promotions"></section>
+      <section class="cards" aria-label="Featured content"></section>
+      <button class="load-more-button" type="button">Load More</button>
+    </main>
+
+    <script src="week3_javascript.js"></script>
+  </body>
+</html>
