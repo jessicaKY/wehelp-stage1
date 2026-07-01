@@ -1,5 +1,3 @@
-以下是 FastAPI 需要安裝的 Python 套件：
-
 fastapi
 uvicorn[standard]
 jinja2

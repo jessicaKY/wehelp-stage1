@@ -15,7 +15,7 @@ from starlette.middleware.sessions import SessionMiddleware                     
 
 
 BASE_DIR = Path(__file__).resolve().parent                                           # 取得 main.py 所在資料夾，也就是 week4_pages
-WEEK3_HOTEL_CSV_PATH = BASE_DIR.parent / "week3_pdf-pages" / "hotels.csv"           # 設定 Week 3 hotels.csv 備援路徑
+HOTEL_CSV_PATH = BASE_DIR / "hotels.csv"                                             # 設定本資料夾 hotels.csv 備援路徑
 HOTELS_CH_URL = "https://resources-wehelp-taiwan-b986132eca78c0b5eeb736fc03240c2ff8b7116.gitlab.io/hotels-ch" # 設定 Week 3 中文旅館資料 URL
 HOTELS_EN_URL = "https://resources-wehelp-taiwan-b986132eca78c0b5eeb736fc03240c2ff8b7116.gitlab.io/hotels-en" # 設定 Week 3 英文旅館資料 URL
 CORRECT_EMAIL = "abc@abc.com"                                                       # 設定 PDF 指定的正確登入信箱
@@ -54,9 +54,9 @@ def load_hotels_from_urls() -> list[dict[str, str]]:                            
     return hotels                                                                     # 回傳整理完成的旅館資料清單
 
 
-def load_hotels_from_week3_csv() -> list[dict[str, str]]:                      # 輔助函式：遠端失敗時從 Week 3 CSV 備援載入旅館資料
+def load_hotels_from_csv() -> list[dict[str, str]]:                            # 輔助函式：遠端失敗時從本資料夾 CSV 備援載入旅館資料
     hotels = []                                                                       # 建立整理後的旅館資料清單
-    with open(WEEK3_HOTEL_CSV_PATH, newline="", encoding="utf-8") as file:            # 開啟 Week 3 產生的 hotels.csv
+    with open(HOTEL_CSV_PATH, newline="", encoding="utf-8") as file:                  # 開啟 week4 資料夾中的 hotels.csv
         reader = csv.reader(file)                                                     # 建立 CSV reader
         for index, row in enumerate(reader, start=1):                                 # 逐列讀取 CSV，並從 1 開始建立 ID
             if len(row) < 5:                                                          # 如果欄位數不足，代表資料不完整
@@ -69,7 +69,7 @@ def load_hotels() -> list[dict[str, str]]:                                      
     try:                                                                              # 嘗試使用 Week 3 遠端 URL
         return load_hotels_from_urls()                                                # 遠端成功時回傳 URL 資料
     except Exception:                                                                 # 遠端失敗時，例如網路不通
-        return load_hotels_from_week3_csv()                                           # 改用 Week 3 CSV 備援資料
+        return load_hotels_from_csv()                                                 # 改用本資料夾 CSV 備援資料
 
 
 HOTELS_CACHE: Optional[list[dict[str, str]]] = None                                   # 建立旅館資料快取，預設還沒有載入
