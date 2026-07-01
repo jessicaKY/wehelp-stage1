@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">      <!-- 設定響應式 viewport，讓手機也能正常縮放 -->
+  <title>歡迎光臨</title>
+  <link rel="stylesheet" href="/static/style.css?v=20260630-2">              <!-- 載入 CSS 樣式檔，版本號避免瀏覽器快取舊版 -->
+  <script src="/static/script.js" defer></script>                             <!-- 載入 JavaScript，defer 代表 HTML 載入完成後再執行 -->
+</head>
+<body>
+  <header class="home-header">
+    <h1>歡迎光臨，請輸入信箱密碼</h1>
+  </header>
+
+  <main class="home-page">                                                    <!-- 首頁主要內容區，包含登入與旅館查詢功能 -->
+    <section class="home-section login-section">                              <!-- 登入功能區塊開始 -->
+      <h2>登入系統</h2>
+      <form id="login-form" class="home-form" action="/login" method="post">  <!-- 登入表單，使用 POST 方法送到 /login -->
+        <div class="form-row">                                                <!-- 信箱欄位列開始 -->
+          <label for="email">信箱</label>                                     <!-- 信箱欄位標籤，for 對應 input 的 id -->
+          <input id="email" name="email" type="text" autocomplete="email">    <!-- 信箱輸入框，name=email 讓後端 Form 接收 -->
+        </div>                                                                <!-- 信箱欄位列結束 -->
+
+        <div class="form-row">                                                <!-- 密碼欄位列開始 -->
+          <label for="password">密碼</label>                                  <!-- 密碼欄位標籤，for 對應 input 的 id -->
+          <input id="password" name="password" type="password" autocomplete="current-password"> <!-- 密碼輸入框，name=password 讓後端 Form 接收 -->
+        </div>                                                                <!-- 密碼欄位列結束 -->
+
+        <label class="checkbox-row" for="agreement">                          <!-- 同意條款列，點文字也能勾選 checkbox -->
+          <span>同意條款</span>                                               <!-- checkbox 旁邊顯示的文字 -->
+          <input id="agreement" name="agreement" type="checkbox">             <!-- 同意條款 checkbox，送出前由 JavaScript 檢查 -->
+        </label>                                                              <!-- 同意條款列結束 -->
+
+        <button type="submit">登入</button>                                   <!-- 登入按鈕，按下後觸發 submit -->
+      </form>
+    </section>                                                                <!-- 登入功能區塊結束 -->
+
+    <section class="home-section hotel-search-section">                       <!-- 旅館查詢功能區塊開始 -->
+      <h2>取得旅館資訊</h2>
+      <form id="hotel-form" class="home-form">                                <!-- 旅館查詢表單，由 JavaScript 控制導向 -->
+        <div class="form-row">                                                <!-- 旅館編號欄位列開始 -->
+          <label for="hotel-id">編號</label>                                  <!-- 旅館編號欄位標籤 -->
+          <input id="hotel-id" type="text" inputmode="numeric">        <!-- 旅館編號輸入框，inputmode=numeric 讓手機顯示數字鍵盤 -->
+        </div>                                                                <!-- 旅館編號欄位列結束 -->
+
+        <button type="submit">取得</button>                            <!-- 取得按鈕，按下後由 JavaScript 檢查並導向 /hotel/{id} -->
+      </form>                                                                 <!-- 旅館查詢表單結束 -->
+    </section>                                                                <!-- 旅館查詢功能區塊結束 -->
+  </main>
+</body>
+</html>

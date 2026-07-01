@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">      <!-- 設定響應式 viewport，讓手機也能正常縮放 -->
+  <title>旅館資訊</title>                                                     <!-- 設定旅館頁瀏覽器分頁標題 -->
+  <link rel="stylesheet" href="/static/style.css?v=20260630-2">              <!-- 載入 CSS 樣式檔，版本號避免瀏覽器快取舊版 -->
+</head>
+<body>
+  <header class="home-header hotel-header">                                   <!-- 旅館頁上方深藍色橫幅 -->
+    <h1>旅館的資訊</h1>                                                       <!-- 旅館頁主標題，白字置中顯示 -->
+  </header>
+
+  <main class="hotel-page">                                                   <!-- 旅館資訊頁主要內容區 -->
+    <section class="hotel-content">                                           <!-- 旅館頁置中內容區塊 -->
+      {% if hotel %}                                                          <!-- 如果後端有找到旅館資料，就顯示旅館資訊 -->
+        <p class="hotel-result">{{ hotel.chinese_name }}、{{ hotel.english_name }}、{{ hotel.phone }}</p> <!-- 顯示中文名稱、英文名稱、電話 -->
+      {% else %}                                                              <!-- 如果後端沒有找到旅館資料，就顯示查無資料 -->
+        <p class="hotel-result">查詢不到相關資料</p>                            <!-- 顯示查無資料文字 -->
+      {% endif %}                                                             <!-- Jinja2 條件判斷結束 -->
+      <a href="/">返回首頁</a>                                                <!-- 返回首頁連結，點擊後回到 / -->
+    </section>
+  </main>
+</body>
+</html>

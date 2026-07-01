@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">      <!-- 設定響應式 viewport，讓手機也能正常縮放 -->
+  <title>Error</title>                                                        <!-- 設定錯誤頁瀏覽器分頁標題 -->
+  <link rel="stylesheet" href="/static/style.css?v=20260630-2">              <!-- 載入 CSS 樣式檔，版本號避免瀏覽器快取舊版 -->
+</head>
+<body>
+  <header class="home-header error-header">                                   <!-- 錯誤頁上方深藍色橫幅 -->
+    <h1>失敗頁面</h1>                                                         <!-- 錯誤頁主標題，白字置中顯示 -->
+  </header>
+
+  <main class="error-page">                                                   <!-- 錯誤頁主要內容區 -->
+    <section class="error-content">
+      <p>{{ message }}</p>                                                    <!-- 顯示後端從 /ohoh?msg=... 傳進來的錯誤訊息 -->
+      <a href="/">返回首頁</a>                                                <!-- 返回首頁連結，點擊後回到 / -->
+    </section>
+  </main>
+</body>
+</html>

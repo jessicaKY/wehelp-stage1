@@ -1,0 +1,283 @@
+* {                                                                            /* 全站元素基礎設定 */
+  box-sizing: border-box;                                                       /* 讓 padding 和 border 計入元素寬高，方便控制排版 */
+}
+
+body {
+  margin: 0;                                                                   /* 移除瀏覽器預設外距 */
+  min-height: 100vh;                                                           /* 讓頁面至少等於視窗高度 */
+  background: #ffffff;                                                         /* 設定全站背景為白色 */
+  color: #000000;                                                              /* 設定全站預設文字顏色為黑色 */
+  font-family: Arial, "Noto Sans TC", sans-serif;                              /* 設定英文字體與中文字體 */
+}
+
+.home-header {                                                                 /* 所有頁面上方深藍色橫幅 */
+  height: 112px;                                                               /* 設定橫幅高度 */
+  display: flex;                                                               /* 使用 flex 方便置中標題 */
+  align-items: center;                                                         /* 讓標題垂直置中 */
+  justify-content: center;                                                     /* 讓標題水平置中 */
+  background: #27495a;                                                         /* 設定深藍色背景 */
+}                                                                              /* 上方深藍色橫幅設定結束 */
+
+.home-header h1 {                                                              /* 橫幅主標題樣式 */
+  margin: 0;                                                                   /* 移除 h1 預設外距 */
+  color: #ffffff;                                                              /* 設定標題文字為白色 */
+  font-size: 30px;                                                             /* 設定標題字級 */
+  font-weight: 700;                                                            /* 設定標題粗體 */
+  line-height: 1.2;                                                            /* 設定標題行高 */
+  letter-spacing: 0;                                                           /* 不額外增加字距 */
+}                                                                              /* 橫幅主標題樣式結束 */
+
+.home-page {                                                                   /* 首頁主要內容區 */
+  min-height: calc(100vh - 112px);                                             /* 設定首頁內容高度為視窗高度扣掉橫幅高度 */
+}                                                                              /* 首頁主要內容區設定結束 */
+
+.home-section {                                                                /* 首頁登入區與旅館查詢區共用區塊 */
+  min-height: 310px;                                                           /* 設定每個首頁區塊最小高度 */
+  padding-top: 50px;                                                           /* 設定內容距離區塊上方的留白 */
+  display: flex;                                                               /* 使用 flex 排列標題與表單 */
+  flex-direction: column;                                                      /* 讓標題與表單垂直排列 */
+  align-items: center;                                                         /* 讓內容水平置中 */
+  justify-content: flex-start;                                                 /* 讓內容從上方開始排列 */
+  border-bottom: 1px solid #e0e0e0;                                            /* 設定區塊底部灰色分隔線 */
+}                                                                              /* 首頁登入區與旅館查詢區共用區塊結束 */
+
+.home-section:last-child {                                                     /* 首頁最後一個區塊 */
+  border-bottom: 0;                                                            /* 移除最下面不需要的灰色線 */
+}                                                                              /* 首頁最後一個區塊設定結束 */
+
+.home-section h2 {                                                             /* 首頁區塊標題 */
+  width: 100%;                                                                 /* 標題寬度填滿父層，方便置中 */
+  margin: 0 0 17px;                                                            /* 設定標題下方距離 */
+  color: #000000;                                                              /* 設定標題文字為黑色 */
+  font-size: 24px;                                                             /* 設定標題文字大小 */
+  font-weight: 700;                                                            /* 設定標題粗體 */
+  line-height: 1.2;                                                            /* 設定標題行高 */
+  letter-spacing: 0;                                                           /* 不額外增加字距 */
+  text-align: center;                                                          /* 標題文字置中 */
+}                                                                              /* 首頁區塊標題設定結束 */
+
+.hotel-search-section {                                                        /* 首頁旅館查詢區塊 */
+  padding-top: 50px;                                                           /* 設定旅館查詢區塊上方留白 */
+}                                                                              /* 首頁旅館查詢區塊設定結束 */
+
+.home-form {                                                                   /* 首頁表單共用樣式 */
+  width: 286px;                                                                /* 固定表單寬度 */
+  display: flex;                                                               /* 使用 flex 排列表單元素 */
+  flex-direction: column;                                                      /* 讓表單元素垂直排列 */
+  align-items: center;                                                         /* 讓表單元素水平置中 */
+  gap: 12px;                                                                   /* 設定表單元素之間的距離 */
+}                                                                              /* 首頁表單共用樣式結束 */
+
+.form-row {                                                                    /* 表單 label 與 input 同列排版 */
+  width: 100%;                                                                 /* 欄位列寬度填滿表單 */
+  display: flex;                                                               /* 使用 flex 讓 label 和 input 同一列 */
+  align-items: center;                                                         /* 讓 label 和 input 垂直置中 */
+  justify-content: center;                                                     /* 讓整列水平置中 */
+}                                                                              /* 表單 label 與 input 同列排版結束 */
+
+.form-row label {                                                              /* 表單欄位標籤 */
+  width: 58px;                                                                 /* 固定 label 寬度讓輸入框對齊 */
+  margin-right: 12px;                                                          /* 設定 label 與 input 之間距離 */
+  font-size: 22px;                                                             /* 設定 label 文字大小 */
+  font-weight: 400;                                                            /* 設定 label 為一般字重 */
+  line-height: 1.2;                                                            /* 設定 label 行高 */
+  text-align: right;                                                           /* 讓 label 文字靠右 */
+}                                                                              /* 表單欄位標籤設定結束 */
+
+.form-row input[type="text"],                                                  /* 首頁文字輸入框選擇器 */
+.form-row input[type="password"] {                                             /* 首頁密碼輸入框選擇器 */
+  width: 216px;                                                                /* 設定輸入框寬度 */
+  height: 28px;                                                                /* 設定輸入框高度 */
+  min-height: 28px;                                                            /* 覆蓋可能造成輸入框過高的最小高度 */
+  padding: 1px 6px;                                                            /* 設定輸入框內距 */
+  border: 1px solid #b8b8b8;                                                   /* 設定輸入框預設淺灰色外框 */
+  border-radius: 3px;                                                          /* 設定輸入框圓角 */
+  background: #ffffff;                                                         /* 設定輸入框背景為白色 */
+  color: #000000;                                                              /* 設定輸入文字為黑色 */
+  font-size: 16px;                                                             /* 設定輸入文字大小 */
+}                                                                              /* 首頁輸入框設定結束 */
+
+.form-row input[type="text"]:focus,                                            /* 文字輸入框 focus 狀態 */
+.form-row input[type="password"]:focus {                                       /* 密碼輸入框 focus 狀態 */
+  outline: auto;                                                               /* 使用瀏覽器預設 focus 外框 */
+  border-color: #222222;                                                       /* focus 時讓輸入框邊框變深 */
+}                                                                              /* 輸入框 focus 狀態設定結束 */
+
+.home-form .checkbox-row {                                                     /* 首頁同意條款列 */
+  margin-top: 1px;                                                             /* 微調同意條款列上方距離 */
+  display: flex;                                                               /* 使用 flex 排列文字和 checkbox */
+  gap: 10px;                                                                   /* 設定文字與 checkbox 之間距離 */
+  align-items: center;                                                         /* 讓文字和 checkbox 垂直置中 */
+  justify-content: center;                                                     /* 讓同意條款列水平置中 */
+  font-size: 22px;                                                             /* 設定同意條款文字大小 */
+  font-weight: 400;                                                            /* 設定一般字重 */
+  line-height: 1.2;                                                            /* 設定行高 */
+  text-align: center;                                                          /* 設定文字置中 */
+}                                                                              /* 首頁同意條款列設定結束 */
+
+.home-form .checkbox-row input {                                               /* 首頁 checkbox 尺寸 */
+  width: 14px;                                                                 /* 設定 checkbox 寬度 */
+  height: 14px;                                                                /* 設定 checkbox 高度 */
+}                                                                              /* 首頁 checkbox 尺寸設定結束 */
+
+.home-form button {                                                            /* 首頁登入與取得按鈕 */
+  min-height: 36px;                                                            /* 設定按鈕最小高度 */
+  margin-top: 4px;                                                             /* 設定按鈕上方距離 */
+  padding: 5px 14px;                                                           /* 設定按鈕內距 */
+  border: 1px solid #b7b7b7;                                                   /* 設定按鈕灰色外框 */
+  border-radius: 4px;                                                          /* 設定按鈕圓角 */
+  background: #f3f3f3;                                                         /* 設定按鈕淺灰背景 */
+  color: #222222;                                                              /* 設定按鈕文字顏色 */
+  font-size: 18px;                                                             /* 設定按鈕文字大小 */
+  font-weight: 400;                                                            /* 設定按鈕文字一般字重 */
+  cursor: pointer;                                                             /* 滑鼠移上按鈕時顯示可點擊游標 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);                                   /* 設定按鈕淡淡陰影 */
+}                                                                              /* 首頁登入與取得按鈕設定結束 */
+
+.home-form button:hover {                                                      /* 首頁按鈕 hover 狀態 */
+  background: #e9e9e9;                                                         /* hover 時背景稍微變深 */
+}                                                                              /* 首頁按鈕 hover 狀態設定結束 */
+
+.member-page {                                                                 /* 會員頁主要內容區 */
+  min-height: calc(100vh - 112px);                                             /* 設定內容高度為視窗高度扣掉橫幅高度 */
+  background: #ffffff;                                                         /* 設定會員頁背景為白色 */
+}                                                                              /* 會員頁主要內容區設定結束 */
+
+.member-content {                                                              /* 會員頁置中內容 */
+  padding-top: 52px;                                                           /* 設定內容距離上方橫幅的距離 */
+  text-align: center;                                                          /* 讓會員頁文字置中 */
+}                                                                              /* 會員頁置中內容設定結束 */
+
+.member-content p {                                                            /* 會員頁成功訊息 */
+  margin: 0 0 12px;                                                            /* 設定訊息下方距離 */
+  color: #000000;                                                              /* 設定訊息文字為黑色 */
+  font-size: 28px;                                                             /* 設定訊息文字大小 */
+  font-weight: 400;                                                            /* 設定一般字重 */
+  line-height: 1.35;                                                           /* 設定行高 */
+  letter-spacing: 0;                                                           /* 不額外增加字距 */
+}
+
+.member-content a {                                                            /* 會員頁登出連結 */
+  color: #551a8b;                                                              /* 設定連結為紫色 */
+  font-size: 28px;                                                             /* 設定連結文字大小 */
+  font-weight: 400;                                                            /* 設定一般字重 */
+  line-height: 1.35;                                                           /* 設定行高 */
+  text-decoration: underline;                                                  /* 設定連結底線 */
+}
+
+.hotel-page {                                                                  /* 旅館資訊頁主要內容區 */
+  min-height: calc(100vh - 112px);                                             /* 設定內容高度為視窗高度扣掉橫幅高度 */
+  background: #ffffff;                                                         /* 設定旅館頁背景為白色 */
+}
+
+.hotel-content {                                                               /* 旅館資訊頁置中內容 */
+  padding-top: 52px;                                                           /* 設定內容距離上方橫幅的距離 */
+  text-align: center;                                                          /* 讓旅館資訊置中 */
+}
+
+.hotel-result {                                                                /* 旅館查詢結果文字 */
+  margin: 0 0 12px;                                                            /* 設定結果文字下方距離 */
+  color: #000000;                                                              /* 設定結果文字為黑色 */
+  font-size: 28px;                                                             /* 設定結果文字大小 */
+  font-weight: 400;                                                            /* 設定一般字重 */
+  line-height: 1.35;                                                           /* 設定行高 */
+  letter-spacing: 0;                                                           /* 不額外增加字距 */
+}
+
+.hotel-content a {                                                             /* 旅館頁返回首頁連結 */
+  color: #551a8b;                                                              /* 設定連結為紫色 */
+  font-size: 28px;                                                             /* 設定連結文字大小 */
+  font-weight: 400;                                                            /* 設定一般字重 */
+  line-height: 1.35;                                                           /* 設定行高 */
+  text-decoration: underline;                                                  /* 設定連結底線 */
+}
+
+.error-page {                                                                  /* 錯誤頁主要內容區 */
+  min-height: calc(100vh - 112px);                                             /* 設定內容高度為視窗高度扣掉橫幅高度 */
+  background: #ffffff;                                                         /* 設定錯誤頁背景為白色 */
+}
+
+.error-content {                                                               /* 錯誤頁置中內容 */
+  padding-top: 52px;                                                           /* 設定內容距離上方橫幅的距離 */
+  text-align: center;                                                          /* 讓錯誤訊息置中 */
+}
+
+.error-content p {                                                             /* 錯誤訊息文字 */
+  margin: 0 0 12px;                                                            /* 設定錯誤訊息下方距離 */
+  color: #000000;                                                              /* 設定錯誤訊息為黑色 */
+  font-size: 28px;                                                             /* 設定錯誤訊息文字大小 */
+  font-weight: 400;                                                            /* 設定一般字重 */
+  line-height: 1.35;                                                           /* 設定行高 */
+  letter-spacing: 0;                                                           /* 不額外增加字距 */
+}
+
+.error-content a {                                                             /* 錯誤頁返回首頁連結 */
+  color: #551a8b;                                                              /* 設定連結為紫色 */
+  font-size: 28px;                                                             /* 設定連結文字大小 */
+  font-weight: 400;                                                            /* 設定一般字重 */
+  line-height: 1.35;                                                           /* 設定行高 */
+  text-decoration: underline;                                                  /* 設定連結底線 */
+}
+
+@media (max-width: 720px) {                                                    /* 手機版響應式設定 */
+  .home-header {                                                               /* 手機版上方橫幅 */
+    height: 96px;                                                              /* 手機版橫幅高度縮小 */
+    padding: 0 20px;                                                           /* 手機版橫幅左右留白 */
+    text-align: center;                                                        /* 手機版橫幅文字置中 */
+  }
+
+  .home-header h1 {                                                            /* 手機版橫幅標題 */
+    font-size: 26px;                                                           /* 手機版標題文字縮小 */
+  }                                                                            /* 手機版橫幅標題設定結束 */
+
+  .home-section {                                                              /* 手機版首頁區塊 */
+    min-height: 330px;                                                         /* 手機版首頁區塊高度 */
+    padding-top: 42px;                                                         /* 手機版首頁區塊上方留白 */
+  }                                                                            /* 手機版首頁區塊設定結束 */
+
+  .home-section h2 {                                                           /* 手機版首頁區塊標題 */
+    font-size: 22px;                                                           /* 手機版首頁區塊標題字級 */
+  }                                                                            /* 手機版首頁區塊標題設定結束 */
+
+  .home-form {                                                                 /* 手機版首頁表單 */
+    width: 280px;                                                              /* 手機版首頁表單寬度 */
+  }                                                                            /* 手機版首頁表單設定結束 */
+
+  .form-row label {                                                            /* 手機版表單 label */
+    width: 56px;                                                               /* 手機版 label 寬度 */
+    margin-right: 12px;                                                        /* 手機版 label 與 input 間距 */
+    font-size: 21px;                                                           /* 手機版 label 字級 */
+  }                                                                            /* 手機版表單 label 設定結束 */
+
+  .form-row input[type="text"],                                                /* 手機版文字輸入框 */
+  .form-row input[type="password"] {                                           /* 手機版密碼輸入框 */
+    width: 212px;                                                              /* 手機版輸入框寬度 */
+  }                                                                            /* 手機版輸入框設定結束 */
+
+  .member-content {                                                            /* 手機版會員頁內容 */
+    padding-top: 46px;                                                         /* 手機版會員頁內容上方留白 */
+  }                                                                            /* 手機版會員頁內容設定結束 */
+
+  .member-content p,                                                           /* 手機版會員頁訊息 */
+  .member-content a {                                                          /* 手機版會員頁連結 */
+    font-size: 24px;                                                           /* 手機版會員頁文字大小 */
+  }                                                                            /* 手機版會員頁文字設定結束 */
+
+  .hotel-content {                                                             /* 手機版旅館頁內容 */
+    padding: 46px 20px 0;                                                      /* 手機版旅館頁內容留白 */
+  }                                                                            /* 手機版旅館頁內容設定結束 */
+
+  .hotel-result,                                                               /* 手機版旅館結果文字 */
+  .hotel-content a {                                                           /* 手機版旅館頁連結 */
+    font-size: 24px;                                                           /* 手機版旅館頁文字大小 */
+  }                                                                            /* 手機版旅館頁文字設定結束 */
+
+  .error-content {                                                             /* 手機版錯誤頁內容 */
+    padding: 46px 20px 0;                                                      /* 手機版錯誤頁內容留白 */
+  }                                                                            /* 手機版錯誤頁內容設定結束 */
+
+  .error-content p,                                                            /* 手機版錯誤訊息 */
+  .error-content a {                                                           /* 手機版錯誤頁連結 */
+    font-size: 24px;                                                           /* 手機版錯誤頁文字大小 */
+  }                                                                            /* 手機版錯誤頁文字設定結束 */
+}                                                                              /* 手機版響應式設定結束 */
